@@ -1,11 +1,48 @@
 // Iteration #1: Find the maximum
 
+// function maxOfTwoNumbers (num1, num2) {
+//   if (num1 > num2) {
+//     return num1
+//   } else if (num1 < num2) {
+//     return num2
+//   } else if (num1 === num2) {
+//     return console.log(`The numbers (${num1} and ${num2}) are exact the same!`)
+//   }
+// }
+
+// changed the function maxOfTwoNumbers to let jasmine test accept the results
+
+function maxOfTwoNumbers (num1, num2) {
+  if (num1 > num2) {
+    return num1
+  } else if (num1 < num2) {
+    return num2
+  } else if (num1 === num2) {
+    return num1
+  }
+}
+
 // Iteration #2: Find longest word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
+
+function findLongestWord(str_ara) {
+  let max = str_ara[0].length;
+  str_ara.map(v => max = Math.max(max, v.length));
+  result = str_ara.filter(v => v.length == max);
+  return result;
+}
+
+console.log(findLongestWord(words))
+
 
 // Iteration #3: Calculate the sum
 
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
+
+let sumArray = 0;
+numbers.forEach(arguments => {sumArray += arguments})
+
+sumArray; // expected result 87
 
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
