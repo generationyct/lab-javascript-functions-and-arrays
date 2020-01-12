@@ -25,30 +25,43 @@ function maxOfTwoNumbers (num1, num2) {
 // Iteration #2: Find longest word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
-function findLongestWord(str_ara) {
-  let max = str_ara[0].length;
-  str_ara.map(v => max = Math.max(max, v.length));
-  result = str_ara.filter(v => v.length == max);
-  return result;
+function findLongestWord(array) {
+  let max = array[0].length;
+  array.map(biggest => max = Math.max(max, biggest.length));
+  result = array.filter(biggest => biggest.length == max);
+  return result || null;
 }
 
 console.log(findLongestWord(words))
-
 
 // Iteration #3: Calculate the sum
 
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
-let sumArray = 0;
-numbers.forEach(arguments => {sumArray += arguments})
+let sumArrayWithLet = 0;
+numbers.forEach(arguments => {sumArrayWithLet += arguments})
 
-console.log(sumArray); // expected result 87
+console.log(sumArrayWithLet); // expected result 87
 
 // Second shorter way to calc the sum of a array of numbers with .reduce()
 
-const sumArray2 = arr => arr.reduce((a, b) => a + b, 0 )
+const sumArrayShortHandArrow = arr => arr.reduce((a, b) => a + b, 0 )
 
-console.log(sumArray2(numbers))
+console.log(sumArrayShortHandArrow(numbers))
+
+// And now the way the jasmine test expects it to be!
+
+const sumArray = function (arr) {
+  return arr.reduce((a, b) => a + b, 0 )
+}
+
+console.log(sumArray(numbers))
+
+// function sumArray (arr) { arr.reduce((a, b) => a + b, 0)
+//   return console.log(arr)
+// }
+
+
 
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
