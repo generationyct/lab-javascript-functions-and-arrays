@@ -42,7 +42,13 @@ const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 let sumArray = 0;
 numbers.forEach(arguments => {sumArray += arguments})
 
-sumArray; // expected result 87
+console.log(sumArray); // expected result 87
+
+// Second shorter way to calc the sum of a array of numbers with .reduce()
+
+const sumArray2 = arr => arr.reduce((a, b) => a + b, 0 )
+
+console.log(sumArray2(numbers))
 
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
